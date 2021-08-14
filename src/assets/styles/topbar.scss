@@ -1,0 +1,12 @@
+.topbar {
+  width: 100%;
+  height: 65px;
+  padding: 12px 5px;
+  margin: 10px 0;
+}
+
+.topbar-col {
+  &.ant-col {
+    padding: 0 5px !important;
+  }
+}
