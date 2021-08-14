@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Button from "../../components/button";
 import { Row, Col, Input } from "antd";
 import { MenuOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
+import Button from "../../components/button";
 import Logo from "../../assets/images/female-daily-logo.png";
 import "../../assets/styles/topbar.scss";
 

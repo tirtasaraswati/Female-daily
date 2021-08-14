@@ -8,9 +8,9 @@ import { Spin } from "antd";
 
 const publicRoutes = [
   {
-    path: PUBLIC_ROUTE.BLANK_PAGE,
+    path: PUBLIC_ROUTE.HOME,
     exact: true,
-    component: lazy(() => import("../src/containers/blankpage")),
+    component: lazy(() => import("../src/containers/Home/index")),
   },
 ];
 

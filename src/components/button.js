@@ -38,6 +38,18 @@ const CustomButton = ({
         >
           {label}
         </Button>
+      ) : type === "link" ? (
+        <Button
+          className="button-link"
+          size={size}
+          disabled={disabled}
+          type={type}
+          shape={shape}
+          value={value}
+          icon={icon}
+        >
+          {label}
+        </Button>
       ) : null}
     </div>
   );

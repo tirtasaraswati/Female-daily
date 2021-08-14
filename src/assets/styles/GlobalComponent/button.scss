@@ -43,3 +43,25 @@
     border-color: #df657f !important;
   }
 }
+
+.button-link {
+  &.ant-btn-link {
+    color: #000;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    font-weight: 700;
+  }
+
+  &.ant-btn-link:hover,
+  .ant-btn-link:focus {
+    color: #df657f !important;
+    background: transparent;
+    border: none;
+  }
+  &.ant-btn-link::after,
+  .ant-btn-link:active,
+  .ant-btn::selection {
+    color: #df657f !important;
+  }
+}

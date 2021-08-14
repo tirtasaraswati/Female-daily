@@ -1,12 +1,32 @@
 .topbar {
   width: 100%;
-  height: 65px;
-  padding: 12px 5px;
-  margin: 10px 0;
+  // height: 65px;
+  // padding: 12px 5px;
+  // margin: 10px 0;
 }
 
 .topbar-col {
   &.ant-col {
     padding: 0 5px !important;
   }
+}
+
+.top-frame {
+  border: 1px solid #000;
+  width: 970px;
+  height: 50px;
+  text-align: center;
+  display: block;
+  margin: 20px auto;
+  background: #cecece;
+}
+
+.billboard {
+  border: 1px solid #000;
+  width: 970px;
+  height: 250px;
+  text-align: center;
+  display: block;
+  margin: 20px auto;
+  background: #cecece;
 }
