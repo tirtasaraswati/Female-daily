@@ -102,7 +102,7 @@ export default function () {
   ];
   return (
     <div className="homeWrapper">
-      <Row>
+      <Row className="mr20">
         <Col span={24}>
           <div style={{ marginBottom: "15px" }}>
             <h1 className="title">Editor's Choice</h1>
@@ -114,7 +114,7 @@ export default function () {
         </Col>
       </Row>
       <div className="pink-banner">
-        <Row>
+        <Row className="mr20">
           <img className="img-poster" src={Poster} />
           <Col span={5} style={{ marginRight: "10px" }}>
             <h1 className="banner-title">
@@ -133,7 +133,6 @@ export default function () {
               />
             </div>
           </Col>
-
           <Col span={12}>
             <Card data={dataCard} />
           </Col>
@@ -142,29 +141,166 @@ export default function () {
       <div className="banner-horizontal">
         <h1>Horizontal 970x250 (Internal Campaign Only)</h1>
       </div>
-      <Row>
-        <Col span={22}>
-          <div style={{ marginBottom: "15px" }}>
-            <h1 className="title">Latest Articles</h1>
-            <h3 className="sub-title">
-              So you can make better purchase decision
-            </h3>
-          </div>
-        </Col>
-        <Col span={2}>
-          <Button
-            type="link"
-            size="large"
-            onClick={() => {}}
-            value={"See More >"}
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col span={24}>
-          <Articles data={dataArticles} />
-        </Col>
-      </Row>
+      <div>
+        <Row className="mr20">
+          <Col span={22}>
+            <div style={{ marginBottom: "15px" }}>
+              <h1 className="title">Latest Articles</h1>
+              <h3 className="sub-title">
+                So you can make better purchase decision
+              </h3>
+            </div>
+          </Col>
+          <Col span={2}>
+            <Button
+              type="link"
+              size="large"
+              onClick={() => {}}
+              value={"See More >"}
+            />
+          </Col>
+        </Row>
+        <Row className="mr20">
+          <Col span={24}>
+            <Articles data={dataArticles} />
+          </Col>
+        </Row>
+      </div>
+
+      <div>
+        <Row className="mr20">
+          <Col span={14}>
+            <div style={{ marginBottom: "15px" }}>
+              <h1 className="title">Latest Reviews</h1>
+              <h3 className="sub-title">
+                So you can make better purchase decision
+              </h3>
+            </div>
+            <div>Component Review</div>
+          </Col>
+          <Col span={2}>
+            <Button
+              type="link"
+              size="large"
+              onClick={() => {}}
+              value={"See More >"}
+            />
+          </Col>
+          <Col span={5} offset={2}>
+            <div className="banner-mr">
+              <h1>MR 2 300x250</h1>
+            </div>
+          </Col>
+        </Row>
+      </div>
+
+      <div>
+        <Row className="mr20">
+          <Col span={22}>
+            <div style={{ marginBottom: "15px" }}>
+              <h1 className="title">Popular Groups</h1>
+              <h3 className="sub-title">Where the beauty TALK are</h3>
+            </div>
+          </Col>
+          <Col span={2}>
+            <Button
+              type="link"
+              size="large"
+              onClick={() => {}}
+              value={"See More >"}
+            />
+          </Col>
+        </Row>
+        <Row className="mr20">
+          <Col span={24}>Component Popular Groups</Col>
+        </Row>
+      </div>
+
+      <div>
+        <Row className="mr20">
+          <Col span={22}>
+            <div style={{ marginBottom: "15px" }}>
+              <h1 className="title">Latest Videos</h1>
+              <h3 className="sub-title">Watch and learn, ladies</h3>
+            </div>
+          </Col>
+          <Col span={2}>
+            <Button
+              type="link"
+              size="large"
+              onClick={() => {}}
+              value={"See More >"}
+            />
+          </Col>
+        </Row>
+        <Row className="mr20">
+          <Col span={16}>Big Videos 1</Col>
+          <Col span={8}>
+            <div>Small videos 2</div>
+            <div>Small videos 3</div>
+          </Col>
+        </Row>
+      </div>
+
+      <div>
+        <Row className="mr20">
+          <Col span={22}>
+            <div style={{ marginBottom: "15px" }}>
+              <h1 className="title">Trending This Week</h1>
+              <h3 className="sub-title">
+                See our weekly most reviewed products
+              </h3>
+            </div>
+          </Col>
+          <Col span={2}>
+            <Button
+              type="link"
+              size="large"
+              onClick={() => {}}
+              value={"See More >"}
+            />
+          </Col>
+        </Row>
+        <Row className="mr20">
+          <Col span={24}>
+            <Card data={dataCard} />
+          </Col>
+        </Row>
+      </div>
+
+      <div>
+        <Row className="mr20">
+          <Col span={22}>
+            <div style={{ marginBottom: "15px" }}>
+              <h1 className="title">Top Brands</h1>
+              <h3 className="sub-title">We all know and love</h3>
+            </div>
+          </Col>
+          <Col span={2}>
+            <Button
+              type="link"
+              size="large"
+              onClick={() => {}}
+              value={"See More >"}
+            />
+          </Col>
+        </Row>
+        <Row className="mr20">
+          <Col span={24}>
+            <div>Image Brands</div>
+            <h1>
+              Female Daily - Find everything you want to know about beauty on
+              Female Daily
+            </h1>
+            <p>
+              Product Reviews, Tips & Tricks, Expert and Consumer Opinions,
+              Beauty Tutorials, Discussions, Beauty Workshop, anything! We are
+              here to be your friendly solution to all things beauty, inside and
+              out!
+            </p>
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 }
