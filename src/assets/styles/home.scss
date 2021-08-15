@@ -2,11 +2,47 @@
   padding: 20px 68px;
 }
 
-.title {
+.editor-title {
   font-weight: 800;
   margin: 0;
 }
 
-.sub-title {
+.editor-subTitle {
   color: #b0adad;
+}
+
+.pink-banner {
+  background: #fddae0;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.img-poster {
+  height: 425px;
+}
+
+.banner-title {
+  padding: 70px 0 0 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.banner-desc {
+  font-size: 18px;
+}
+
+.custom-button {
+  margin: 10px 0;
+  right: 0 !important;
+  position: absolute !important;
+}
+
+.banner-horizontal {
+  border: 1px solid #000;
+  width: 970px;
+  height: 250px;
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+  background: #cecece;
 }
