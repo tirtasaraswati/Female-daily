@@ -6,6 +6,7 @@ import { Row, Col } from "antd";
 import Card from "../../components/card";
 import CardProfile from "../../components/cardProfile";
 import Button from "../../components/button";
+import Articles from "../../components/cardArticle";
 import Poster from "../../assets/images/poster.jpg";
 import "../../assets/styles/home.scss";
 
@@ -13,8 +14,6 @@ export default function () {
   let dispatch = useDispatch();
   // let state = useSelector((state) => state.Home);
   let history = useHistory();
-  const img =
-    "https://static.femaledaily.com/dyn/640/images/prod-pics/product_1558000129_YOU_MAKEUP_800x800.png";
 
   const dataCard = [
     {
@@ -54,13 +53,60 @@ export default function () {
       role: "Senior Editor",
     },
   ];
+
+  const dataArticles = [
+    {
+      image:
+        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
+      title: "9 Best Oils for Sensitive Skin",
+      username: "Username",
+      publish: "2 hours ago",
+    },
+    {
+      image:
+        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
+      title: "6 Color Pallete Trends to Look Out for in 2018",
+      username: "Username",
+      publish: "2 hours ago",
+    },
+    {
+      image:
+        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
+      title:
+        "Top Beauty Buys to Be On the Lookout for in 2918, According to Beauty Pros",
+      username: "Username",
+      publish: "2 hours ago",
+    },
+    {
+      image:
+        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
+      title: "9 Best Oils for Sensitive Skin",
+      username: "Username",
+      publish: "2 hours ago",
+    },
+    {
+      image:
+        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
+      title: "6 Color Pallete Trends to Look Out for in 2018",
+      username: "Username",
+      publish: "2 hours ago",
+    },
+    {
+      image:
+        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
+      title:
+        "Top Beauty Buys to Be On the Lookout for in 2918, According to Beauty Pros",
+      username: "Username",
+      publish: "2 hours ago",
+    },
+  ];
   return (
     <div className="homeWrapper">
       <Row>
         <Col span={24}>
           <div style={{ marginBottom: "15px" }}>
-            <h1 className="editor-title">Editor's Choice</h1>
-            <h3 className="editor-subTitle">Curated with love</h3>
+            <h1 className="title">Editor's Choice</h1>
+            <h3 className="sub-title">Curated with love</h3>
           </div>
         </Col>
         <Col span={24}>
@@ -96,6 +142,29 @@ export default function () {
       <div className="banner-horizontal">
         <h1>Horizontal 970x250 (Internal Campaign Only)</h1>
       </div>
+      <Row>
+        <Col span={22}>
+          <div style={{ marginBottom: "15px" }}>
+            <h1 className="title">Latest Articles</h1>
+            <h3 className="sub-title">
+              So you can make better purchase decision
+            </h3>
+          </div>
+        </Col>
+        <Col span={2}>
+          <Button
+            type="link"
+            size="large"
+            onClick={() => {}}
+            value={"See More >"}
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col span={24}>
+          <Articles data={dataArticles} />
+        </Col>
+      </Row>
     </div>
   );
 }
