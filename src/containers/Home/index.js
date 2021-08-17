@@ -11,7 +11,10 @@ import {
 } from "@ant-design/icons";
 import Button from "../../components/button";
 import Card from "../../components/card";
+import Review from "./review";
+import Trending from "./trending";
 import Poster from "../../assets/images/poster.jpg";
+import Brands from "../../assets/images/top-brands.jpg";
 import "../../assets/styles/home.scss";
 
 export default function () {
@@ -108,10 +111,11 @@ export default function () {
   const handleClick = () => {
     history.push("/");
   };
+
   return (
     <div className="homeWrapper">
-      <div>
-        <Row className="mr20">
+      <div className="mt-30">
+        <Row>
           <Col span={24}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Editor's Choice</h1>
@@ -162,7 +166,7 @@ export default function () {
         </Row>
       </div>
 
-      <div className="pink-banner">
+      <div className="pink-banner mt-30">
         <Row>
           <Col span={5}>
             <img className="img-poster" src={Poster} />
@@ -210,11 +214,11 @@ export default function () {
         </Row>
       </div>
 
-      <div className="banner-horizontal">
+      <div className="banner-horizontal mt-30">
         <h1>Horizontal 970x250 (Internal Campaign Only)</h1>
       </div>
       <div>
-        <Row className="mr20">
+        <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Latest Articles</h1>
@@ -270,9 +274,9 @@ export default function () {
         </Row>
       </div>
 
-      <div>
+      <div className="mt-30">
         <Row>
-          <Col span={16}>
+          <Col span={14}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Latest Reviews</h1>
               <h3 className="sub-title">
@@ -290,49 +294,9 @@ export default function () {
           </Col>
         </Row>
         <Row>
-          {dataCard.map((item) => (
-            <Col span={8}>
-              <Card
-                title={
-                  <Row>
-                    <Col span={6}>
-                      <img
-                        className="img-product-small"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                      />
-                    </Col>
-                    <Col span={2}>
-                      <h3 className="card-title">{item.name}</h3>
-                      <div>{item.desc}</div>
-                    </Col>
-                  </Row>
-                }
-                content={
-                  <div>
-                    <div>
-                      <Rate className="rate-star" disabled value={item.value} />
-                      <span style={{ color: "#8f8f8f" }}>2 hours</span>
-                    </div>
-                    <div>
-                      Suka pake produk ini lalalalallalalalala Suka pake produk
-                      ini lalalalallalalalalaSuka pake produk ini
-                      lalalalallalalalalaSuka pake produk ini
-                      lalalalallalalalala
-                    </div>
-                  </div>
-                }
-              />
-              <div className="profile-bottomCenter">
-                <Avatar size={55} icon={<UserOutlined />} />
-                <div>
-                  <div style={{ fontWeight: 700 }}>{item.editor}</div>
-                  <div style={{ fontSize: "12px", color: "#808080" }}>
-                    {item.role}
-                  </div>
-                </div>
-              </div>
-            </Col>
-          ))}
+          <Col span={16}>
+            <Review />
+          </Col>
 
           <Col span={6}>
             <div className="banner-mr">
@@ -342,8 +306,8 @@ export default function () {
         </Row>
       </div>
 
-      <div>
-        <Row className="mr20">
+      <div className="mt-30">
+        <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Popular Groups</h1>
@@ -400,8 +364,8 @@ export default function () {
         </Row>
       </div>
 
-      <div>
-        <Row className="mr20">
+      <div className="mt-30">
+        <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Latest Videos</h1>
@@ -417,17 +381,33 @@ export default function () {
             />
           </Col>
         </Row>
-        <Row className="mr20">
-          <Col span={16}>Big Videos 1</Col>
+        <Row>
+          <Col span={16}>
+            <iframe
+              width="98%"
+              height="100%"
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            />
+          </Col>
+
           <Col span={8}>
-            <div>Small videos 2</div>
-            <div>Small videos 3</div>
+            <iframe
+              width="98%"
+              // height="100%"
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            />
+
+            <iframe
+              width="98%"
+              // height="100%"
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            />
           </Col>
         </Row>
       </div>
 
-      <div>
-        <Row className="mr20">
+      <div className="mt-30">
+        <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Trending This Week</h1>
@@ -446,34 +426,14 @@ export default function () {
           </Col>
         </Row>
         <Row>
-          {dataCard.map((item) => (
-            <Col span={4}>
-              <Card
-                className="card"
-                content={
-                  <div>
-                    <img className="img-product" src={item.image} />
-                    <div className="card-text">{item.title}</div>
-                    <div style={{ marginBottom: "8px" }}>
-                      <span className="rate-value">{item.value}</span>
-                      <Rate className="rate-star" disabled value={item.value} />
-                      <span className="rate-count">({item.total})</span>
-                    </div>
-                    <div>
-                      <h3 className="card-title">{item.name}</h3>
-                      <div style={{ fontWeight: 500 }}>{item.desc}</div>
-                      <div style={{ color: "#8f8f8f" }}>{item.info}</div>
-                    </div>
-                  </div>
-                }
-              />
-            </Col>
-          ))}
+          <Col span={24}>
+            <Trending />
+          </Col>
         </Row>
       </div>
 
-      <div>
-        <Row className="mr20">
+      <div className="mt-30">
+        <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Top Brands</h1>
@@ -489,9 +449,11 @@ export default function () {
             />
           </Col>
         </Row>
-        <Row className="mr20">
+        <Row>
           <Col span={24}>
-            <div>Image Brands</div>
+            <div>
+              <img src={Brands} width="100%" />
+            </div>
             <h1>
               Female Daily - Find everything you want to know about beauty on
               Female Daily
@@ -505,6 +467,9 @@ export default function () {
           </Col>
         </Row>
       </div>
+      <Row>
+        <Col>{/* <Review /> */}</Col>
+      </Row>
     </div>
   );
 }
