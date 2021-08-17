@@ -1,7 +1,7 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Row, Col, Rate, Avatar } from "antd";
 import {
   TeamOutlined,
@@ -17,10 +17,18 @@ import Poster from "../../assets/images/poster.jpg";
 import Brands from "../../assets/images/top-brands.jpg";
 import "../../assets/styles/home.scss";
 
+import allFunctionHome from "../../redux/Home/action";
+
+const { getData } = allFunctionHome;
+
 export default function () {
   let dispatch = useDispatch();
-  // let state = useSelector((state) => state.Home);
+  let state = useSelector((state) => state.Home);
   let history = useHistory();
+
+  useEffect(() => {
+    dispatch(getData());
+  }, []);
 
   const dataCard = [
     {
@@ -69,43 +77,6 @@ export default function () {
       username: "Username",
       publish: "2 hours ago",
     },
-    {
-      image:
-        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
-      title: "6 Color Pallete Trends to Look Out for in 2018",
-      username: "Username",
-      publish: "2 hours ago",
-    },
-    {
-      image:
-        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
-      title:
-        "Top Beauty Buys to Be On the Lookout for in 2918, According to Beauty Pros",
-      username: "Username",
-      publish: "2 hours ago",
-    },
-    {
-      image:
-        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
-      title: "9 Best Oils for Sensitive Skin",
-      username: "Username",
-      publish: "2 hours ago",
-    },
-    {
-      image:
-        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
-      title: "6 Color Pallete Trends to Look Out for in 2018",
-      username: "Username",
-      publish: "2 hours ago",
-    },
-    {
-      image:
-        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
-      title:
-        "Top Beauty Buys to Be On the Lookout for in 2918, According to Beauty Pros",
-      username: "Username",
-      publish: "2 hours ago",
-    },
   ];
 
   const handleClick = () => {
@@ -124,7 +95,7 @@ export default function () {
           </Col>
         </Row>
         <Row>
-          {dataCard.map((item) => (
+          {state.listEditor.map((item) => (
             <Col span={4}>
               <Row>
                 <div className="profile-topLeft">
@@ -142,20 +113,24 @@ export default function () {
                 content={
                   <div>
                     <div>
-                      <img className="img-product" src={item.image} />
+                      <img className="img-product" src={item.product.image} />
                       <div style={{ marginBottom: "8px" }}>
-                        <span className="rate-value">{item.value}</span>
+                        <span className="rate-value">
+                          {item.product.rating}
+                        </span>
                         <Rate
                           className="rate-star"
                           disabled
-                          value={item.value}
+                          value={item.product.rating}
                         />
-                        <span className="rate-count">({item.total})</span>
+                        <span className="rate-count">(3)</span>
                       </div>
                       <div>
-                        <h3 className="card-title">{item.name}</h3>
-                        <div style={{ fontWeight: 500 }}>{item.desc}</div>
-                        <div style={{ color: "#8f8f8f" }}>{item.info}</div>
+                        <h3 className="card-title">{item.product.name}</h3>
+                        <div style={{ fontWeight: 500 }}>
+                          {item.product.description}
+                        </div>
+                        <div style={{ color: "#8f8f8f" }}>Info</div>
                       </div>
                     </div>
                   </div>
@@ -237,7 +212,7 @@ export default function () {
           </Col>
         </Row>
         <Row>
-          {dataArticles.map((item) => (
+          {state.listArticles.map((item) => (
             <Col span={8}>
               <Card
                 className="card-article "
@@ -262,8 +237,10 @@ export default function () {
                           marginTop: "5px",
                         }}
                       >
-                        {item.username} |{" "}
-                        <span style={{ color: "#b2b2b2" }}>{item.publish}</span>
+                        {item.author} |{" "}
+                        <span style={{ color: "#b2b2b2" }}>
+                          {item.published_at}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -364,7 +341,7 @@ export default function () {
         </Row>
       </div>
 
-      <div className="mt-30">
+      <div className="mt-30 height-xl">
         <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
@@ -381,26 +358,26 @@ export default function () {
             />
           </Col>
         </Row>
-        <Row>
+        <Row style={{ height: "500px" }}>
           <Col span={16}>
             <iframe
               width="98%"
               height="100%"
-              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              src="https://www.youtube.com/embed/hm8tJXPog8I"
             />
           </Col>
 
           <Col span={8}>
             <iframe
               width="98%"
-              // height="100%"
-              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              height="50%"
+              src="https://www.youtube.com/embed/m8r_68vSkNU"
             />
 
             <iframe
               width="98%"
-              // height="100%"
-              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              height="50%"
+              src="https://www.youtube.com/embed/im4wR5t2Yyg"
             />
           </Col>
         </Row>

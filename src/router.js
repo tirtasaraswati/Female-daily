@@ -15,7 +15,7 @@ const publicRoutes = [
 ];
 
 export default function Routes() {
-  let state = useSelector((state) => state.App);
+  let state = useSelector((state) => state.Home);
   return (
     <Suspense fallback={<Loader />}>
       <Router>

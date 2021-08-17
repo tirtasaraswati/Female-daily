@@ -1,6 +1,6 @@
 import { all } from "redux-saga/effects";
-import AppSagas from "./App/saga";
+import HomeSagas from "./Home/saga";
 
 export default function* rootSaga(getState) {
-  yield all([AppSagas()]);
+  yield all([HomeSagas()]);
 }
