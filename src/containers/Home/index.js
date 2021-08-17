@@ -2,11 +2,15 @@ import React, { useEffect, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import { Row, Col } from "antd";
-import Card from "../../components/card";
-import CardProfile from "../../components/cardProfile";
+import { Row, Col, Rate, Avatar } from "antd";
+import {
+  TeamOutlined,
+  BarsOutlined,
+  CommentOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import Button from "../../components/button";
-import Articles from "../../components/cardArticle";
+import Card from "../../components/card";
 import Poster from "../../assets/images/poster.jpg";
 import "../../assets/styles/home.scss";
 
@@ -100,23 +104,70 @@ export default function () {
       publish: "2 hours ago",
     },
   ];
+
+  const handleClick = () => {
+    history.push("/");
+  };
   return (
     <div className="homeWrapper">
-      <Row className="mr20">
-        <Col span={24}>
-          <div style={{ marginBottom: "15px" }}>
-            <h1 className="title">Editor's Choice</h1>
-            <h3 className="sub-title">Curated with love</h3>
-          </div>
-        </Col>
-        <Col span={24}>
-          <CardProfile data={dataCard} />
-        </Col>
-      </Row>
-      <div className="pink-banner">
+      <div>
         <Row className="mr20">
-          <img className="img-poster" src={Poster} />
-          <Col span={5} style={{ marginRight: "10px" }}>
+          <Col span={24}>
+            <div style={{ marginBottom: "15px" }}>
+              <h1 className="title">Editor's Choice</h1>
+              <h3 className="sub-title">Curated with love</h3>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          {dataCard.map((item) => (
+            <Col span={4}>
+              <Row>
+                <div className="profile-topLeft">
+                  <Avatar size={55} icon={<UserOutlined />} />
+                  <div style={{ marginLeft: "15px" }}>
+                    <div style={{ fontWeight: 700 }}>{item.editor}</div>
+                    <div style={{ fontSize: "12px", color: "#808080" }}>
+                      {item.role}
+                    </div>
+                  </div>
+                </div>
+              </Row>
+              <Card
+                className="card"
+                content={
+                  <div>
+                    <div>
+                      <img className="img-product" src={item.image} />
+                      <div style={{ marginBottom: "8px" }}>
+                        <span className="rate-value">{item.value}</span>
+                        <Rate
+                          className="rate-star"
+                          disabled
+                          value={item.value}
+                        />
+                        <span className="rate-count">({item.total})</span>
+                      </div>
+                      <div>
+                        <h3 className="card-title">{item.name}</h3>
+                        <div style={{ fontWeight: 500 }}>{item.desc}</div>
+                        <div style={{ color: "#8f8f8f" }}>{item.info}</div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              />
+            </Col>
+          ))}
+        </Row>
+      </div>
+
+      <div className="pink-banner">
+        <Row>
+          <Col span={5}>
+            <img className="img-poster" src={Poster} />
+          </Col>
+          <Col span={6} style={{ margin: "0 25px" }}>
             <h1 className="banner-title">
               Looking for products that are just simply perfect for you?
             </h1>
@@ -133,11 +184,32 @@ export default function () {
               />
             </div>
           </Col>
-          <Col span={12}>
-            <Card data={dataCard} />
-          </Col>
+          {dataCard.map((item) => (
+            <Col span={4}>
+              <Card
+                className="card"
+                content={
+                  <div>
+                    <img className="img-product" src={item.image} />
+                    <div className="card-text">{item.title}</div>
+                    <div style={{ marginBottom: "8px" }}>
+                      <span className="rate-value">{item.value}</span>
+                      <Rate className="rate-star" disabled value={item.value} />
+                      <span className="rate-count">({item.total})</span>
+                    </div>
+                    <div>
+                      <h3 className="card-title">{item.name}</h3>
+                      <div style={{ fontWeight: 500 }}>{item.desc}</div>
+                      <div style={{ color: "#8f8f8f" }}>{item.info}</div>
+                    </div>
+                  </div>
+                }
+              />
+            </Col>
+          ))}
         </Row>
       </div>
+
       <div className="banner-horizontal">
         <h1>Horizontal 970x250 (Internal Campaign Only)</h1>
       </div>
@@ -160,23 +232,53 @@ export default function () {
             />
           </Col>
         </Row>
-        <Row className="mr20">
-          <Col span={24}>
-            <Articles data={dataArticles} />
-          </Col>
+        <Row>
+          {dataArticles.map((item) => (
+            <Col span={8}>
+              <Card
+                className="card-article "
+                bordered={false}
+                content={
+                  <div>
+                    <div className="frame-articles">
+                      <img className="img-article" src={item.image} />
+                    </div>
+                    <div>
+                      <div
+                        className="card-title"
+                        type="button"
+                        onClick={handleClick}
+                      >
+                        {item.title}
+                      </div>
+                      <div
+                        style={{
+                          color: "#626262",
+                          fontWeight: 500,
+                          marginTop: "5px",
+                        }}
+                      >
+                        {item.username} |{" "}
+                        <span style={{ color: "#b2b2b2" }}>{item.publish}</span>
+                      </div>
+                    </div>
+                  </div>
+                }
+              />
+            </Col>
+          ))}
         </Row>
       </div>
 
       <div>
-        <Row className="mr20">
-          <Col span={14}>
+        <Row>
+          <Col span={16}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Latest Reviews</h1>
               <h3 className="sub-title">
                 So you can make better purchase decision
               </h3>
             </div>
-            <div>Component Review</div>
           </Col>
           <Col span={2}>
             <Button
@@ -186,7 +288,53 @@ export default function () {
               value={"See More >"}
             />
           </Col>
-          <Col span={5} offset={2}>
+        </Row>
+        <Row>
+          {dataCard.map((item) => (
+            <Col span={8}>
+              <Card
+                title={
+                  <Row>
+                    <Col span={6}>
+                      <img
+                        className="img-product-small"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    </Col>
+                    <Col span={2}>
+                      <h3 className="card-title">{item.name}</h3>
+                      <div>{item.desc}</div>
+                    </Col>
+                  </Row>
+                }
+                content={
+                  <div>
+                    <div>
+                      <Rate className="rate-star" disabled value={item.value} />
+                      <span style={{ color: "#8f8f8f" }}>2 hours</span>
+                    </div>
+                    <div>
+                      Suka pake produk ini lalalalallalalalala Suka pake produk
+                      ini lalalalallalalalalaSuka pake produk ini
+                      lalalalallalalalalaSuka pake produk ini
+                      lalalalallalalalala
+                    </div>
+                  </div>
+                }
+              />
+              <div className="profile-bottomCenter">
+                <Avatar size={55} icon={<UserOutlined />} />
+                <div>
+                  <div style={{ fontWeight: 700 }}>{item.editor}</div>
+                  <div style={{ fontSize: "12px", color: "#808080" }}>
+                    {item.role}
+                  </div>
+                </div>
+              </div>
+            </Col>
+          ))}
+
+          <Col span={6}>
             <div className="banner-mr">
               <h1>MR 2 300x250</h1>
             </div>
@@ -211,8 +359,44 @@ export default function () {
             />
           </Col>
         </Row>
-        <Row className="mr20">
-          <Col span={24}>Component Popular Groups</Col>
+        <Row>
+          {dataCard.map((item) => (
+            <Col span={5}>
+              <Card
+                className="card-shadow"
+                content={
+                  <div>
+                    <img
+                      className="img-profile"
+                      src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                    />
+                    <div style={{ textAlign: "center" }}>
+                      <div
+                        className="card-title"
+                        type="button"
+                        onClick={handleClick}
+                      >
+                        {item.name}
+                      </div>
+                    </div>
+                    <div className="icon">
+                      <TeamOutlined className="icon-list" />
+                      <span>{item.totalMember}</span>
+                      <BarsOutlined className="icon-list" />
+                      <span>{item.totalContent}</span>
+                      <CommentOutlined className="icon-list" />
+                      <span>{item.comment}</span>
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: 500, textAlign: "center" }}>
+                        {item.desc}
+                      </div>
+                    </div>
+                  </div>
+                }
+              />
+            </Col>
+          ))}
         </Row>
       </div>
 
@@ -261,10 +445,30 @@ export default function () {
             />
           </Col>
         </Row>
-        <Row className="mr20">
-          <Col span={24}>
-            <Card data={dataCard} />
-          </Col>
+        <Row>
+          {dataCard.map((item) => (
+            <Col span={4}>
+              <Card
+                className="card"
+                content={
+                  <div>
+                    <img className="img-product" src={item.image} />
+                    <div className="card-text">{item.title}</div>
+                    <div style={{ marginBottom: "8px" }}>
+                      <span className="rate-value">{item.value}</span>
+                      <Rate className="rate-star" disabled value={item.value} />
+                      <span className="rate-count">({item.total})</span>
+                    </div>
+                    <div>
+                      <h3 className="card-title">{item.name}</h3>
+                      <div style={{ fontWeight: 500 }}>{item.desc}</div>
+                      <div style={{ color: "#8f8f8f" }}>{item.info}</div>
+                    </div>
+                  </div>
+                }
+              />
+            </Col>
+          ))}
         </Row>
       </div>
 

@@ -16,6 +16,18 @@
   color: #b0b0b0;
 }
 
+.profile-topLeft {
+  display: flex;
+  z-index: 10;
+  margin-left: 20px;
+  margin-bottom: -20px;
+}
+
+.profile-bottomCenter {
+  text-align: center;
+  margin-top: -35px;
+}
+
 .pink-banner {
   background: #fddae0;
   width: 100%;

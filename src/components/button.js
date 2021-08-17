@@ -3,7 +3,7 @@ import { Button } from "antd";
 import "../assets/styles/GlobalComponent/button.scss";
 
 const CustomButton = ({
-  // onCLick,
+  onClick,
   value,
   disabled = false,
   size = "large",
@@ -23,6 +23,7 @@ const CustomButton = ({
           shape={shape}
           value={value}
           icon={icon}
+          onClick={onClick}
         >
           {label}
         </Button>
@@ -35,6 +36,7 @@ const CustomButton = ({
           shape={shape}
           value={value}
           icon={icon}
+          onClick={onClick}
         >
           {label}
         </Button>
@@ -47,6 +49,7 @@ const CustomButton = ({
           shape={shape}
           value={value}
           icon={icon}
+          onClick={onClick}
         >
           {label}
         </Button>

@@ -52,13 +52,15 @@
     border-color: transparent;
     box-shadow: none;
     font-weight: 700;
+    border: none !important;
+    padding: 0;
   }
 
   &.ant-btn-link:hover,
   .ant-btn-link:focus {
     color: #df657f !important;
     background: transparent;
-    border: none;
+    border: none !important;
   }
   &.ant-btn-link::after,
   .ant-btn-link:active,
