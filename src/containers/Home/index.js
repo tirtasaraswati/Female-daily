@@ -15,6 +15,7 @@ import Review from "./review";
 import Trending from "./trending";
 import Poster from "../../assets/images/poster.jpg";
 import Brands from "../../assets/images/top-brands.jpg";
+import Profile from "../../assets/images/profile-user.png";
 import "../../assets/styles/home.scss";
 
 import allFunctionHome from "../../redux/Home/action";
@@ -69,23 +70,13 @@ export default function () {
     },
   ];
 
-  const dataArticles = [
-    {
-      image:
-        "https://editorial.femaledaily.com/wp-content/uploads/2017/09/Teknik-Contouring-yang-Salah.png",
-      title: "9 Best Oils for Sensitive Skin",
-      username: "Username",
-      publish: "2 hours ago",
-    },
-  ];
-
   const handleClick = () => {
     history.push("/");
   };
 
   return (
     <div className="homeWrapper">
-      <div className="mt-30">
+      <div className="mt-50">
         <Row>
           <Col span={24}>
             <div style={{ marginBottom: "15px" }}>
@@ -96,15 +87,16 @@ export default function () {
         </Row>
         <Row>
           {state.listEditor.map((item) => (
-            <Col span={4}>
+            <Col xs={24} sm={24} md={12} lg={6} xl={6}>
               <Row>
                 <div className="profile-topLeft">
-                  <Avatar size={55} icon={<UserOutlined />} />
+                  <Avatar
+                    size={{ xs: 40, sm: 40, md: 55, lg: 55, xl: 60, xxl: 80 }}
+                    icon={<UserOutlined />}
+                  />
                   <div style={{ marginLeft: "15px" }}>
-                    <div style={{ fontWeight: 700 }}>{item.editor}</div>
-                    <div style={{ fontSize: "12px", color: "#808080" }}>
-                      {item.role}
-                    </div>
+                    <div className="title-small">{item.editor}</div>
+                    <div className="info">{item.role}</div>
                   </div>
                 </div>
               </Row>
@@ -112,26 +104,24 @@ export default function () {
                 className="card"
                 content={
                   <div>
-                    <div>
+                    <div className="margin">
                       <img className="img-product" src={item.product.image} />
-                      <div style={{ marginBottom: "8px" }}>
-                        <span className="rate-value">
-                          {item.product.rating}
-                        </span>
-                        <Rate
-                          className="rate-star"
-                          disabled
-                          value={item.product.rating}
-                        />
-                        <span className="rate-count">(3)</span>
+                    </div>
+                    <div style={{ marginBottom: "8px" }}>
+                      <span className="rate-value">{item.product.rating}</span>
+                      <Rate
+                        className="rate-star"
+                        disabled
+                        value={item.product.rating}
+                      />
+                      <span className="rate-count">(3)</span>
+                    </div>
+                    <div>
+                      <h3 className="card-title">{item.product.name}</h3>
+                      <div className="card-desc">
+                        {item.product.description}
                       </div>
-                      <div>
-                        <h3 className="card-title">{item.product.name}</h3>
-                        <div style={{ fontWeight: 500 }}>
-                          {item.product.description}
-                        </div>
-                        <div style={{ color: "#8f8f8f" }}>Info</div>
-                      </div>
+                      <div className="card-detail">Info</div>
                     </div>
                   </div>
                 }
@@ -141,12 +131,19 @@ export default function () {
         </Row>
       </div>
 
-      <div className="pink-banner mt-30">
-        <Row>
-          <Col span={5}>
+      <div className="pink-banner mt-50">
+        <Row gutter={{ xs: 16, sm: 2, md: 8 }}>
+          <Col xs={0} sm={0} md={10} lg={0} xl={5}>
             <img className="img-poster" src={Poster} />
           </Col>
-          <Col span={6} style={{ margin: "0 25px" }}>
+          <Col
+            xs={20}
+            sm={20}
+            md={12}
+            lg={4}
+            xl={5}
+            style={{ margin: "0 25px" }}
+          >
             <h1 className="banner-title">
               Looking for products that are just simply perfect for you?
             </h1>
@@ -164,13 +161,15 @@ export default function () {
             </div>
           </Col>
           {dataCard.map((item) => (
-            <Col span={4}>
+            <Col xs={20} sm={12} md={8} lg={6} xl={4}>
               <Card
                 className="card"
                 content={
                   <div>
-                    <img className="img-product" src={item.image} />
-                    <div className="card-text">{item.title}</div>
+                    <div className="margin">
+                      <img className="img-product" src={item.image} />
+                    </div>
+                    <div className="card-title-pink">{item.title}</div>
                     <div style={{ marginBottom: "8px" }}>
                       <span className="rate-value">{item.value}</span>
                       <Rate className="rate-star" disabled value={item.value} />
@@ -178,8 +177,8 @@ export default function () {
                     </div>
                     <div>
                       <h3 className="card-title">{item.name}</h3>
-                      <div style={{ fontWeight: 500 }}>{item.desc}</div>
-                      <div style={{ color: "#8f8f8f" }}>{item.info}</div>
+                      <div className="card-desc">{item.desc}</div>
+                      <div className="card-detail">{item.info}</div>
                     </div>
                   </div>
                 }
@@ -189,7 +188,7 @@ export default function () {
         </Row>
       </div>
 
-      <div className="banner-horizontal mt-30">
+      <div className="banner-horizontal mt-50">
         <h1>Horizontal 970x250 (Internal Campaign Only)</h1>
       </div>
       <div>
@@ -213,7 +212,7 @@ export default function () {
         </Row>
         <Row>
           {state.listArticles.map((item) => (
-            <Col span={8}>
+            <Col xs={24} sm={12} md={12} lg={8} xl={8}>
               <Card
                 className="card-article "
                 bordered={false}
@@ -230,17 +229,9 @@ export default function () {
                       >
                         {item.title}
                       </div>
-                      <div
-                        style={{
-                          color: "#626262",
-                          fontWeight: 500,
-                          marginTop: "5px",
-                        }}
-                      >
+                      <div className="card-desc">
                         {item.author} |{" "}
-                        <span style={{ color: "#b2b2b2" }}>
-                          {item.published_at}
-                        </span>
+                        <span className="card-detail">{item.published_at}</span>
                       </div>
                     </div>
                   </div>
@@ -251,7 +242,7 @@ export default function () {
         </Row>
       </div>
 
-      <div className="mt-30">
+      <div className="mt-50">
         <Row>
           <Col span={14}>
             <div style={{ marginBottom: "15px" }}>
@@ -271,11 +262,11 @@ export default function () {
           </Col>
         </Row>
         <Row>
-          <Col span={16}>
+          <Col xs={24} sm={24} md={16} lg={16} xl={16}>
             <Review />
           </Col>
 
-          <Col span={6}>
+          <Col xs={24} sm={24} md={6} lg={6} xl={6}>
             <div className="banner-mr">
               <h1>MR 2 300x250</h1>
             </div>
@@ -283,7 +274,7 @@ export default function () {
         </Row>
       </div>
 
-      <div className="mt-30">
+      <div className="mt-50">
         <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
@@ -302,15 +293,14 @@ export default function () {
         </Row>
         <Row>
           {dataCard.map((item) => (
-            <Col span={5}>
+            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
               <Card
                 className="card-shadow"
                 content={
                   <div>
-                    <img
-                      className="img-profile"
-                      src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                    />
+                    <div style={{ textAlign: "center" }}>
+                      <img className="img-profile" src={Profile} />
+                    </div>
                     <div style={{ textAlign: "center" }}>
                       <div
                         className="card-title"
@@ -328,10 +318,8 @@ export default function () {
                       <CommentOutlined className="icon-list" />
                       <span>{item.comment}</span>
                     </div>
-                    <div>
-                      <div style={{ fontWeight: 500, textAlign: "center" }}>
-                        {item.desc}
-                      </div>
+                    <div style={{ textAlign: "center" }}>
+                      <div className="card-desc">{item.desc}</div>
                     </div>
                   </div>
                 }
@@ -341,7 +329,7 @@ export default function () {
         </Row>
       </div>
 
-      <div className="mt-30 height-xl">
+      <div className="mt-50 height-xl">
         <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
@@ -358,8 +346,8 @@ export default function () {
             />
           </Col>
         </Row>
-        <Row style={{ height: "500px" }}>
-          <Col span={16}>
+        <Row className="height-l">
+          <Col xs={24} sm={24} md={16} lg={16} xl={16}>
             <iframe
               width="98%"
               height="100%"
@@ -367,7 +355,7 @@ export default function () {
             />
           </Col>
 
-          <Col span={8}>
+          <Col xs={24} sm={24} md={8} lg={8} xl={8}>
             <iframe
               width="98%"
               height="50%"
@@ -383,7 +371,7 @@ export default function () {
         </Row>
       </div>
 
-      <div className="mt-30">
+      <div className="mt-50">
         <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
@@ -409,7 +397,7 @@ export default function () {
         </Row>
       </div>
 
-      <div className="mt-30">
+      <div className="mt-50">
         <Row>
           <Col span={22}>
             <div style={{ marginBottom: "15px" }}>

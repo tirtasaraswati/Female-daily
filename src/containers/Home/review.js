@@ -19,8 +19,52 @@ export default function () {
     // infinite: true,
     speed: 500,
     autoplay: true,
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: true,
+        },
+      },
+
+      {
+        breakpoint: 2560,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
   };
 
   let dataSlider = state.listReview.map((item) => {
@@ -34,7 +78,7 @@ export default function () {
               </Col>
               <Col span={2}>
                 <h3 className="card-title">{item.product.name}</h3>
-                <div>{item.product.desc}</div>
+                <div className="card-desc">{item.product.desc}</div>
               </Col>
             </Row>
           }
@@ -42,19 +86,17 @@ export default function () {
             <div>
               <div>
                 <Rate className="rate-star" disabled value={item.star} />
-                <span style={{ color: "#8f8f8f" }}>2 hours</span>
+                <span className="card-info">2 hours</span>
               </div>
-              <div>{item.comment}</div>
+              <div className="card-desc">{item.comment}</div>
             </div>
           }
         />
         <div className="profile-bottomCenter">
           <Avatar size={55} icon={<UserOutlined />} />
           <div>
-            <div style={{ fontWeight: 700 }}>{item.user}</div>
-            <div style={{ fontSize: "12px", color: "#808080" }}>
-              {item.profile}
-            </div>
+            <div className="card-desc">{item.user}</div>
+            <div className="card-detail">{item.profile}</div>
           </div>
         </div>
       </div>

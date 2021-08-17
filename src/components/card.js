@@ -4,7 +4,7 @@ import "../assets/styles/GlobalComponent/card.scss";
 
 const CardBasic = ({ className, title, extra, content, bordered }) => {
   return (
-    <Row>
+    <div style={{ margin: "5px" }}>
       <Card
         className={className}
         title={title}
@@ -14,7 +14,7 @@ const CardBasic = ({ className, title, extra, content, bordered }) => {
       >
         <div>{content}</div>
       </Card>
-    </Row>
+    </div>
   );
 };
 
