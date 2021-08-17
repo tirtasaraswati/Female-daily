@@ -266,7 +266,7 @@ export default function () {
             <Review />
           </Col>
 
-          <Col xs={24} sm={24} md={6} lg={6} xl={6}>
+          <Col xs={24} sm={24} md={6} lg={5} xl={6}>
             <div className="banner-mr">
               <h1>MR 2 300x250</h1>
             </div>
@@ -312,11 +312,11 @@ export default function () {
                     </div>
                     <div className="icon">
                       <TeamOutlined className="icon-list" />
-                      <span>{item.totalMember}</span>
+                      <span>{item.totalMember}-</span>
                       <BarsOutlined className="icon-list" />
-                      <span>{item.totalContent}</span>
+                      <span>{item.totalContent}-</span>
                       <CommentOutlined className="icon-list" />
-                      <span>{item.comment}</span>
+                      <span>{item.comment}-</span>
                     </div>
                     <div style={{ textAlign: "center" }}>
                       <div className="card-desc">{item.desc}</div>
@@ -417,7 +417,7 @@ export default function () {
         <Row>
           <Col span={24}>
             <div>
-              <img src={Brands} width="100%" />
+              <img src={Brands} width="95%" />
             </div>
             <h1>
               Female Daily - Find everything you want to know about beauty on
@@ -432,9 +432,6 @@ export default function () {
           </Col>
         </Row>
       </div>
-      <Row>
-        <Col>{/* <Review /> */}</Col>
-      </Row>
     </div>
   );
 }

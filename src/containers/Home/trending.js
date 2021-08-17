@@ -18,7 +18,7 @@ export default function () {
     // infinite: true,
     speed: 500,
     autoplay: true,
-    slidesToShow: 8,
+    slidesToShow: 6,
     slidesToScroll: 2,
     responsive: [
       {
@@ -56,7 +56,7 @@ export default function () {
       {
         breakpoint: 2560,
         settings: {
-          slidesToShow: 8,
+          slidesToShow: 6,
           slidesToScroll: 2,
           infinite: true,
           dots: true,

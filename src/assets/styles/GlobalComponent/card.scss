@@ -60,6 +60,15 @@
   color: #8f8f8f;
 }
 
+.pink {
+  color: #dc294f;
+}
+
+.pink:hover,
+.pink:focus {
+  color: #df657f !important;
+}
+
 //Rate Styles
 .rate-star {
   &.ant-rate {
@@ -243,7 +252,7 @@
   .card-info {
     color: #8f8f8f;
     font-size: 12px;
-    margin-left: 50%;
+    margin-left: 56%;
   }
 
   .card-detail {
@@ -276,7 +285,7 @@
 
   .icon-list {
     margin: 10px 8px 10px 20px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
   }
@@ -394,7 +403,7 @@
 
 @media (min-width: 1440px) {
   .margin {
-    margin: 0 40px;
+    margin: 0 20px;
   }
 
   .card-title {
@@ -482,7 +491,7 @@
 
 @media (min-width: 2560px) {
   .margin {
-    margin: 0 100px;
+    margin: 0 80px;
   }
   .card-title {
     margin-bottom: 0;
