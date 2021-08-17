@@ -50,7 +50,7 @@
 
 .card-info {
   color: #8f8f8f;
-  margin-left: 50%;
+  margin-left: 40%;
 }
 
 .card-detail {
@@ -164,7 +164,8 @@
   .card-info {
     color: #8f8f8f;
     font-size: 12px;
-    margin-left: 50%;
+    position: absolute;
+    right: 10px;
   }
 
   .card-detail {
@@ -177,21 +178,21 @@
   .rate-star {
     &.ant-rate {
       color: #dc294f !important;
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 
   .rate-value {
     font-weight: 700;
     margin-right: 5px;
-    font-size: 14px;
+    font-size: 12px;
     padding: 0;
   }
 
   .rate-count {
     font-weight: 700;
     margin-left: 5px;
-    font-size: 14px;
+    font-size: 12px;
     padding: 0;
   }
 
@@ -252,7 +253,8 @@
   .card-info {
     color: #8f8f8f;
     font-size: 12px;
-    margin-left: 56%;
+    position: absolute;
+    right: 10px;
   }
 
   .card-detail {
@@ -340,7 +342,8 @@
   .card-info {
     color: #8f8f8f;
     font-size: 12px;
-    margin-left: 36%;
+    position: absolute;
+    right: 10px;
   }
 
   .card-detail {
@@ -428,7 +431,8 @@
   .card-info {
     color: #8f8f8f;
     font-size: 14px;
-    margin-left: 56%;
+    position: absolute;
+    right: 10px;
   }
 
   .card-detail {
@@ -515,7 +519,8 @@
   .card-info {
     color: #8f8f8f;
     font-size: 20px;
-    margin-left: 48%;
+    position: absolute;
+    right: 10px;
   }
 
   .card-detail {

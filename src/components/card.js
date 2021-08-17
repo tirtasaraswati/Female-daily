@@ -4,7 +4,7 @@ import "../assets/styles/GlobalComponent/card.scss";
 
 const CardBasic = ({ className, title, extra, content, bordered }) => {
   return (
-    <div style={{ margin: "5px" }}>
+    <div style={{ margin: "7px" }}>
       <Card
         className={className}
         title={title}

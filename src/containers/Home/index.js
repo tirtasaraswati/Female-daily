@@ -133,7 +133,7 @@ export default function () {
 
       <div className="pink-banner mt-50">
         <Row gutter={{ xs: 16, sm: 2, md: 8 }}>
-          <Col xs={0} sm={0} md={10} lg={0} xl={5}>
+          <Col xs={0} sm={0} md={6} lg={0} xl={5}>
             <img className="img-poster" src={Poster} />
           </Col>
           <Col
@@ -293,7 +293,7 @@ export default function () {
         </Row>
         <Row>
           {dataCard.map((item) => (
-            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+            <Col xs={24} sm={12} md={12} lg={6} xl={6}>
               <Card
                 className="card-shadow"
                 content={

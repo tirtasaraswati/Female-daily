@@ -108,7 +108,7 @@ export default function () {
           <Avatar size={55} icon={<UserOutlined />} />
           <div>
             <div className="card-desc">{item.user}</div>
-            <div className="card-detail">{item.profile}</div>
+            <div className="card-detail">{item.profile.join()}</div>
           </div>
         </div>
       </div>
