@@ -55,7 +55,9 @@ export default function () {
                     icon={<UserOutlined />}
                   />
                   <div style={{ marginLeft: "15px" }}>
-                    <div className="title-small">{item.editor}</div>
+                    <div className="title-small">
+                      {item.editor.toUpperCase()}
+                    </div>
                     <div className="info">{item.role}</div>
                   </div>
                 </div>
@@ -183,9 +185,14 @@ export default function () {
                 bordered={false}
                 content={
                   <div>
-                    <div className="frame-articles">
-                      <img alt="" className="img-article" src={item.image} />
-                    </div>
+                    {/* <div className="frame-articles"> */}
+                    <img
+                      className="img-article"
+                      src={
+                        "https://editorial.femaledaily.com/wp-content/uploads/2011/01/IMG_0311.jpg"
+                      }
+                    />
+                    {/* </div> */}
                     <div>
                       <div
                         className="card-title"
