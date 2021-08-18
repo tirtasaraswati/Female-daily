@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Row, Col, Rate, Avatar } from "antd";
@@ -30,45 +29,6 @@ export default function () {
   useEffect(() => {
     dispatch(getData());
   }, []);
-
-  const dataCard = [
-    {
-      image:
-        "https://static.femaledaily.com/dyn/640/images/prod-pics/product_1558000129_YOU_MAKEUP_800x800.png",
-      title: "Match Skin Type",
-      value: 4.9,
-      total: 7,
-      name: "Y.O.U Lip Cream",
-      desc: "Lip cream",
-      info: "Neutral Rose",
-      editor: "Andien",
-      role: "Senior Editor",
-    },
-    {
-      image:
-        "https://static.femaledaily.com/dyn/640/images/prod-pics/product_1558000129_YOU_MAKEUP_800x800.png",
-      title: "Match Skin Type",
-      value: 4.9,
-      total: 7,
-      name: "Y.O.U Lip Cream",
-      desc: "Lip cream",
-      info: "Neutral Rose",
-      editor: "Andien",
-      role: "Senior Editor",
-    },
-    {
-      image:
-        "https://static.femaledaily.com/dyn/640/images/prod-pics/product_1558000129_YOU_MAKEUP_800x800.png",
-      title: "Match Skin Type",
-      value: 4.9,
-      total: 7,
-      name: "Y.O.U Lip Cream",
-      desc: "Lip cream",
-      info: "Neutral Rose",
-      editor: "Andien",
-      role: "Senior Editor",
-    },
-  ];
 
   const handleClick = () => {
     history.push("/");
@@ -105,7 +65,11 @@ export default function () {
                 content={
                   <div>
                     <div className="margin">
-                      <img className="img-product" src={item.product.image} />
+                      <img
+                        alt=""
+                        className="img-product"
+                        src={item.product.image}
+                      />
                     </div>
                     <div style={{ marginBottom: "8px" }}>
                       <span className="rate-value">{item.product.rating}</span>
@@ -134,7 +98,7 @@ export default function () {
       <div className="pink-banner mt-50">
         <Row gutter={{ xs: 16, sm: 2, md: 8 }}>
           <Col xs={0} sm={0} md={6} lg={0} xl={5}>
-            <img className="img-poster" src={Poster} />
+            <img alt="" className="img-poster" src={Poster} />
           </Col>
           <Col
             xs={20}
@@ -160,14 +124,14 @@ export default function () {
               />
             </div>
           </Col>
-          {dataCard.map((item) => (
+          {state.listMatchType.map((item) => (
             <Col xs={20} sm={12} md={8} lg={6} xl={4}>
               <Card
                 className="card"
                 content={
                   <div>
                     <div className="margin">
-                      <img className="img-product" src={item.image} />
+                      <img alt="" className="img-product" src={item.image} />
                     </div>
                     <div className="card-title-pink">{item.title}</div>
                     <div style={{ marginBottom: "8px" }}>
@@ -203,6 +167,7 @@ export default function () {
           </Col>
           <Col span={2}>
             <Button
+              className="button-link-pink"
               type="link"
               size="large"
               onClick={() => {}}
@@ -219,7 +184,7 @@ export default function () {
                 content={
                   <div>
                     <div className="frame-articles">
-                      <img className="img-article" src={item.image} />
+                      <img alt="" className="img-article" src={item.image} />
                     </div>
                     <div>
                       <div
@@ -244,7 +209,7 @@ export default function () {
 
       <div className="mt-50">
         <Row>
-          <Col span={14}>
+          <Col span={22}>
             <div style={{ marginBottom: "15px" }}>
               <h1 className="title">Latest Reviews</h1>
               <h3 className="sub-title">
@@ -254,6 +219,7 @@ export default function () {
           </Col>
           <Col span={2}>
             <Button
+              className="button-link-pink"
               type="link"
               size="large"
               onClick={() => {}}
@@ -261,12 +227,12 @@ export default function () {
             />
           </Col>
         </Row>
-        <Row>
-          <Col xs={24} sm={24} md={16} lg={16} xl={16}>
+        <Row gutter={{ xs: 8, sm: 8, md: 12, lg: 24 }}>
+          <Col xs={24} sm={24} md={24} lg={12} xl={16}>
             <Review />
           </Col>
 
-          <Col xs={24} sm={24} md={6} lg={5} xl={6}>
+          <Col xs={24} sm={24} md={24} lg={6} xl={6}>
             <div className="banner-mr">
               <h1>MR 2 300x250</h1>
             </div>
@@ -284,6 +250,7 @@ export default function () {
           </Col>
           <Col span={2}>
             <Button
+              className="button-link-pink"
               type="link"
               size="large"
               onClick={() => {}}
@@ -292,14 +259,14 @@ export default function () {
           </Col>
         </Row>
         <Row>
-          {dataCard.map((item) => (
+          {state.listGroup.map((item) => (
             <Col xs={24} sm={12} md={12} lg={6} xl={6}>
               <Card
                 className="card-shadow"
                 content={
                   <div>
                     <div style={{ textAlign: "center" }}>
-                      <img className="img-profile" src={Profile} />
+                      <img alt="" className="img-profile" src={Profile} />
                     </div>
                     <div style={{ textAlign: "center" }}>
                       <div
@@ -307,16 +274,16 @@ export default function () {
                         type="button"
                         onClick={handleClick}
                       >
-                        {item.name}
+                        {item.title}
                       </div>
                     </div>
                     <div className="icon">
                       <TeamOutlined className="icon-list" />
-                      <span>{item.totalMember}-</span>
+                      <span>{item.totalMember}</span>
                       <BarsOutlined className="icon-list" />
-                      <span>{item.totalContent}-</span>
+                      <span>{item.totalContent}</span>
                       <CommentOutlined className="icon-list" />
-                      <span>{item.comment}-</span>
+                      <span>{item.comment}</span>
                     </div>
                     <div style={{ textAlign: "center" }}>
                       <div className="card-desc">{item.desc}</div>
@@ -339,6 +306,7 @@ export default function () {
           </Col>
           <Col span={2}>
             <Button
+              className="button-link-pink"
               type="link"
               size="large"
               onClick={() => {}}
@@ -383,6 +351,7 @@ export default function () {
           </Col>
           <Col span={2}>
             <Button
+              className="button-link-pink"
               type="link"
               size="large"
               onClick={() => {}}
@@ -407,6 +376,7 @@ export default function () {
           </Col>
           <Col span={2}>
             <Button
+              className="button-link-pink"
               type="link"
               size="large"
               onClick={() => {}}
@@ -417,7 +387,7 @@ export default function () {
         <Row>
           <Col span={24}>
             <div>
-              <img src={Brands} width="95%" />
+              <img alt="" src={Brands} width="95%" />
             </div>
             <h1>
               Female Daily - Find everything you want to know about beauty on

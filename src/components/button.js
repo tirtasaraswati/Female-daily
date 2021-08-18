@@ -11,6 +11,7 @@ const CustomButton = ({
   label = value,
   shape,
   icon,
+  className,
 }) => {
   return (
     <div>
@@ -42,7 +43,7 @@ const CustomButton = ({
         </Button>
       ) : type === "link" ? (
         <Button
-          className="button-link"
+          className={className}
           size={size}
           disabled={disabled}
           type={type}

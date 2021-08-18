@@ -1,9 +1,3 @@
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  MailOutlined,
-} from "@ant-design/icons";
-
 const options = [
   {
     key: "skincare",

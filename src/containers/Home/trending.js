@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { Rate } from "antd";
 import Slider from "react-slick";
 import Card from "../../components/card";
@@ -8,11 +6,8 @@ import Card from "../../components/card";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "../../assets/styles/home.scss";
-// import "../../assets/styles/GlobalComponent/carousel.scss";
 
 export default function () {
-  let state = useSelector((state) => state.Home);
-
   const settings = {
     dots: true,
     // infinite: true,
@@ -186,7 +181,7 @@ export default function () {
           content={
             <div>
               <div className="margin">
-                <img className="img-product" src={item.product.image} />
+                <img alt="" className="img-product" src={item.product.image} />
               </div>
               <div className="card-text">{item.title}</div>
               <div style={{ marginBottom: "8px" }}>

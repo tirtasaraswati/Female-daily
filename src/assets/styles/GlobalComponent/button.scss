@@ -1,5 +1,5 @@
 .button-primary {
-  background: #dc294f;
+  background: #dc294f !important;
   border: none;
   // width: 100%;
   position: absolute;
@@ -12,8 +12,8 @@
   }
   &.ant-btn-primary {
     color: #fff;
-    background: #dc294f;
-    border-color: #dc294f;
+    background: #dc294f !important;
+    border-color: #dc294f !important;
   }
   &.ant-btn-primary:active {
     color: #fff;
@@ -97,13 +97,41 @@
   }
 }
 
-.button-link {
+.button-link-pink {
+  color: #dc294f !important;
+
   &.ant-btn-link {
     color: #000;
     background: transparent;
     border-color: transparent;
     box-shadow: none;
-    font-weight: 700;
+    font-weight: 600;
+    border: none !important;
+    padding: 0;
+    color: #dc294f !important;
+  }
+
+  &.ant-btn-link:hover,
+  .ant-btn-link:focus {
+    color: #df657f !important;
+    background: transparent;
+    border: none !important;
+  }
+  &.ant-btn-link::after,
+  .ant-btn-link:active,
+  .ant-btn::selection {
+    color: #df657f !important;
+  }
+}
+
+.button-link {
+  color: #dc294f !important;
+  &.ant-btn-link {
+    color: #000 !important;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    font-weight: 600;
     border: none !important;
     padding: 0;
   }

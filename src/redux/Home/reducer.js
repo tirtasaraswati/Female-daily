@@ -5,6 +5,68 @@ const initState = {
   listEditor: [],
   listArticles: [],
   listReview: [],
+  listGroup: [
+    {
+      title: "Embrace the Curl",
+      totalMember: 20,
+      totalContent: 10,
+      comment: 9,
+      desc: "May our curls pop and never stop!",
+    },
+    {
+      title: "Embrace the Curl",
+      totalMember: "-",
+      totalContent: "-",
+      comment: "-",
+      desc: "May our curls pop and never stop!",
+    },
+    {
+      title: "Embrace the Curl",
+      totalMember: 10,
+      totalContent: 9,
+      comment: 6,
+      desc: "May our curls pop and never stop!",
+    },
+  ],
+  listMatchType: [
+    {
+      image:
+        "https://static.femaledaily.com/dyn/640/images/prod-pics/product_1558000129_YOU_MAKEUP_800x800.png",
+      title: "Match Skin Type",
+      value: 4.9,
+      total: 7,
+      name: "Y.O.U Lip Cream",
+      desc: "Lip cream",
+      info: "Neutral Rose",
+      editor: "Andien",
+      role: "Senior Editor",
+    },
+    {
+      image:
+        "https://static.femaledaily.com/dyn/640/images/prod-pics/product_1558000129_YOU_MAKEUP_800x800.png",
+      title: "Match Skin Type",
+      value: 4.9,
+      total: 7,
+      name: "Y.O.U Lip Cream",
+      desc: "Lip cream",
+      info: "Neutral Rose",
+      editor: "Andien",
+      role: "Senior Editor",
+    },
+    {
+      image:
+        "https://static.femaledaily.com/dyn/640/images/prod-pics/product_1558000129_YOU_MAKEUP_800x800.png",
+      title: "Match Skin Type",
+      value: 4.9,
+      total: 7,
+      name: "Y.O.U Lip Cream",
+      desc: "Lip cream",
+      info: "Neutral Rose",
+      editor: "Andien",
+      role: "Senior Editor",
+    },
+  ],
+
   search: {
     keyword: "",
   },

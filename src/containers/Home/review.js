@@ -1,16 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Row, Col, Rate, Avatar } from "antd";
-import { UserOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import Slider from "react-slick";
 import Card from "../../components/card";
 
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "../../assets/styles/home.scss";
-// import "../../assets/styles/GlobalComponent/carousel.scss";
 
 export default function () {
   let state = useSelector((state) => state.Home);
@@ -35,7 +33,7 @@ export default function () {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           dots: true,
         },
@@ -80,7 +78,11 @@ export default function () {
           title={
             <Row>
               <Col span={6}>
-                <img className="img-product-small" src={item.product.image} />
+                <img
+                  alt=""
+                  className="img-product-small"
+                  src={item.product.image}
+                />
               </Col>
               <Col span={2}>
                 <h3 className="card-title">{item.product.name}</h3>

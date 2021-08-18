@@ -1,17 +1,14 @@
 import * as types from "../../config/actionType";
-import { all, call, put, takeLatest, select } from "redux-saga/effects";
+import { all, call, put, takeLatest } from "redux-saga/effects";
 import action from "../../redux/Home/action";
 import { GET } from "../../config/api";
 
 const BASE_URL_API = "https://virtserver.swaggerhub.com/hqms/FDN-WP/0.1/";
 const { setLoader } = action;
-const getState = (state) => state.Home;
 
 export function* getData(action) {
   try {
     yield put(setLoader(true));
-    const state = yield select(getState);
-
     let response = yield call(GET, BASE_URL_API + "wp", {});
 
     if (response !== undefined) {

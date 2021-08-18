@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Row, Col, Input } from "antd";
 import { MenuOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
 import Button from "../../components/button";
@@ -7,8 +6,6 @@ import Logo from "../../assets/images/female-daily-logo.png";
 import "../../assets/styles/topbar.scss";
 
 export default function Topbar() {
-  const state = useSelector((state) => state.Home);
-
   return (
     <div className="topbar">
       <Row>

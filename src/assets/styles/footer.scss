@@ -14,11 +14,31 @@
   margin: 5px 10px 5px 0;
 }
 
+.bottom-frame {
+  border: 1px solid #000;
+  width: 970px;
+  height: 50px;
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+  background: #cecece;
+}
+
 @media (min-width: 425px) {
   .img-download {
     width: 50%;
     height: 54px;
     margin: 5px 10px 5px 0;
+  }
+
+  .bottom-frame {
+    border: 1px solid #000;
+    width: 320px;
+    height: 50px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    background: #cecece;
   }
 }
 
@@ -28,6 +48,16 @@
     height: 54px;
     margin: 5px 10px 5px 0;
   }
+
+  .bottom-frame {
+    border: 1px solid #000;
+    width: 468px;
+    height: 60px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    background: #cecece;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -35,6 +65,16 @@
     width: 40%;
     height: 54px;
     margin: 5px 10px 5px 0;
+  }
+
+  .bottom-frame {
+    border: 1px solid #000;
+    width: 970px;
+    height: 50px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    background: #cecece;
   }
 }
 
@@ -44,6 +84,16 @@
     height: 62px;
     margin: 5px 10px 5px 0;
   }
+
+  .bottom-frame {
+    border: 1px solid #000;
+    width: 970px;
+    height: 50px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    background: #cecece;
+  }
 }
 
 @media (min-width: 2560px) {
@@ -51,5 +101,15 @@
     width: 30%;
     height: 90px;
     margin: 5px 10px 5px 0;
+  }
+
+  .bottom-frame {
+    border: 1px solid #000;
+    width: 970px;
+    height: 50px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    background: #cecece;
   }
 }

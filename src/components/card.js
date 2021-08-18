@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row } from "antd";
+import { Card } from "antd";
 import "../assets/styles/GlobalComponent/card.scss";
 
 const CardBasic = ({ className, title, extra, content, bordered }) => {
